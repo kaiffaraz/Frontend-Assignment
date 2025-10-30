@@ -18,6 +18,5 @@ It fulfills all the assignment requirements such as:
 ---
 
 ## 📸 Project Preview
-> *(You can replace this with your own screenshot)*  
-```markdown
+
 ![image alt](Output1.png)
