@@ -20,3 +20,5 @@ It fulfills all the assignment requirements such as:
 ## 📸 Project Preview
 
 ![image alt](Output1.png)
+
+![image alt](Output2.png)
