@@ -20,5 +20,5 @@ It fulfills all the assignment requirements such as:
 ## 📸 Project Preview
 > *(You can replace this with your own screenshot)*  
 ```markdown
-![Website Preview]([Screenshot (2).png](https://github.com/kaiffaraz/Frontend-Assignment/blob/main/Screenshot%20(2).png?raw=true))
+![Website Preview]((https://github.com/kaiffaraz/Frontend-Assignment/blob/main/Screenshot%20(2).png?raw=true))
 
