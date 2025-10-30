@@ -67,7 +67,7 @@ Layout automatically adjusts for readability and visual balance across all scree
 **Kaiffaraz**  
 🎓 B.Tech CSE (AI & ML) | Final Year  
 💼 Aspiring Frontend Developer & AI Enthusiast  
-📧 smdkaiffaraz.com  
+📧 smdkaiffaraz@gmail.com  
 🔗 [LinkedIn Profile](https://www.linkedin.com/in/kaiffaraz)  
 
 
