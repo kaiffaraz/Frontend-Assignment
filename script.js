@@ -1,32 +1,36 @@
-// ===== AUTO SCROLL SLIDER =====
-const slider = document.querySelector('.slider');
+// Popup tooltip on hover
+const cards = document.querySelectorAll(".card");
+const popup = document.getElementById("popup");
 
-let scrollAmount = 0;
-let slideTimer;
+cards.forEach(card => {
+  card.addEventListener("mouseenter", (e) => {
+    popup.textContent = card.getAttribute("data-info");
+    popup.style.display = "block";
+    popup.style.left = e.pageX + "px";
+    popup.style.top = e.pageY - 60 + "px";
+  });
 
-// Function to auto-scroll horizontally every 4 seconds
-function autoScrollSlider() {
-  const maxScroll = slider.scrollWidth - slider.clientWidth;
-  const scrollStep = slider.clientWidth; // move by one image width
+  card.addEventListener("mousemove", (e) => {
+    popup.style.left = e.pageX + "px";
+    popup.style.top = e.pageY - 60 + "px";
+  });
 
-  slideTimer = setInterval(() => {
-    scrollAmount += scrollStep;
+  card.addEventListener("mouseleave", () => {
+    popup.style.display = "none";
+  });
+});
 
-    if (scrollAmount >= maxScroll) {
-      // Restart from beginning when it reaches the end
-      scrollAmount = 0;
-    }
+// Auto-scroll slider every 4 seconds
+const slider = document.querySelector(".slider");
 
-    slider.scrollTo({
-      left: scrollAmount,
-      behavior: "smooth",
-    });
-  }, 4000); // 4 seconds interval
+function autoScroll() {
+  const width = slider.clientWidth;
+  const maxScroll = slider.scrollWidth - width;
+  let next = Math.min(slider.scrollLeft + width, maxScroll);
+  if (slider.scrollLeft >= maxScroll - 5) next = 0;
+  slider.scrollTo({ left: next, behavior: "smooth" });
 }
 
-// Start auto-scroll when page loads
-window.addEventListener("load", autoScrollSlider);
-
-// Optional: Pause auto-scroll when user interacts
-slider.addEventListener("mouseenter", () => clearInterval(slideTimer));
-slider.addEventListener("mouseleave", autoScrollSlider);
+let autoInterval = setInterval(autoScroll, 4000);
+slider.addEventListener('wheel', () => clearInterval(autoInterval));
+slider.addEventListener('touchstart', () => clearInterval(autoInterval));
